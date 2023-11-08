@@ -1,25 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import Home from '@/pages/home/index';
+import LazyLoading from './pages/lazyLoading';
+import InfiniteScroll from './pages/infiniteScroll';
+import ScollAnimation from './pages/scrollAnimation';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div>
+        <Routes>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/lazy" element={<LazyLoading />}></Route>
+          <Route path="/infinite" element={<InfiniteScroll />}></Route>
+          <Route path="/scroll" element={<ScollAnimation />}></Route>
+          <Route element={<Navigate replace to={'/'} />} path="*" />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 
