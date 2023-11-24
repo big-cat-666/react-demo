@@ -5,5 +5,5 @@ export const images = [
   'https://img1.baidu.com/it/u=717836318,1763941926&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=375',
   'https://img2.baidu.com/it/u=2082639307,4152418384&fm=253&fmt=auto&app=120&f=JPEG?w=1422&h=800',
   'https://img0.baidu.com/it/u=1451904453,3251967073&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500',
-  'https://img2.baidu.com/it/u=1647295341,4031695074&fm=253&fmt=auto&app=138&f=JPEG?w=800&h=500'
-];
+  'https://img2.baidu.com/it/u=1647295341,4031695074&fm=253&fmt=auto&app=138&f=JPEG?w=800&h=500',
+]

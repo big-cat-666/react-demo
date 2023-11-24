@@ -1,21 +1,21 @@
-import React from 'react';
-import './index.less';
+import React from 'react'
+import './index.less'
 
 export default function ScollAnimation() {
   React.useEffect(() => {
-    const items = document.querySelectorAll('.item');
+    const items = document.querySelectorAll('.item')
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('come-in');
-          observer.unobserve(entry.target);
+          entry.target.classList.add('come-in')
+          observer.unobserve(entry.target)
         }
-      });
-    });
+      })
+    })
     items.forEach((item) => {
-      observer.observe(item);
-    });
-  }, []);
+      observer.observe(item)
+    })
+  }, [])
 
   return (
     <div className="box">
@@ -29,5 +29,5 @@ export default function ScollAnimation() {
       <div className="item">content-8</div>
       <div className="item">content-9</div>
     </div>
-  );
+  )
 }

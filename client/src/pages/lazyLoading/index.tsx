@@ -1,29 +1,29 @@
-import React from 'react';
-import loading from '../../assets/images/loading.gif';
-import './index.less';
-import { images } from './images';
+import React from 'react'
+import loading from '../../assets/images/loading.gif'
+import './index.less'
+import { images } from './images'
 
 export default function LazyLoading() {
   React.useEffect(() => {
-    const lazyImages = document.querySelectorAll('img[data-src]');
+    const lazyImages = document.querySelectorAll('img[data-src]')
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            const lazyImage = entry.target as HTMLImageElement;
-            lazyImage.src = lazyImage.dataset.src!;
-            observer.unobserve(lazyImage);
+            const lazyImage = entry.target as HTMLImageElement
+            lazyImage.src = lazyImage.dataset.src!
+            observer.unobserve(lazyImage)
           }
-        });
+        })
       },
       {
-        threshold: 0.5
+        threshold: 0.5,
       }
-    );
+    )
     lazyImages.forEach((lazyImage) => {
-      observer.observe(lazyImage);
-    });
-  }, []);
+      observer.observe(lazyImage)
+    })
+  }, [])
 
   return (
     <div className="lazy">
@@ -31,5 +31,5 @@ export default function LazyLoading() {
         <img src={loading} data-src={img} alt="" key={idx} />
       ))}
     </div>
-  );
+  )
 }
